@@ -1,0 +1,91 @@
+@start
+		*say
+		Hey! Are you bored? Want to explore something new?
+		*then
+		->node
+@node
+		*say
+		Would you to like to continue?
+		*reprompt
+		Hey are you there, would you like to continue?
+		*then
+		hear yes,yeah,yah,yo,yep,hell yeah,ready,all set for it,ofcourse,yes ofcourse,sure,why not,absolutely,absolutely yes,definitely,cool,intrested,okay{
+			clear all
+			->begin
+		}
+		hear no,nope,nah,not intrested,boring,not at all,ofcourse not,absolutely not,hell no,never,absolutely not,definetely not,no way,not possible{
+			clear all
+			->end
+		}
+@begin
+		*say
+		You somehow entered a haunted house and now need to escape from that haunted house so are you ready?
+		*reprompt
+		Shall we begin?
+		*then
+		hear yes,yeah,yah,yo,hell yeah,yeah am ready,yeah let's begin,start,am always ready,really excited,ofcourse,ofcourse yes,absolutely,absolutely yes,all set for it,definitely,cool,sure,okay,I am in{
+			clear all
+			->node1
+		}
+		hear no,not intrested,nah,boring,not at all,never,hell no,ofcourse not,absolutely not,no way,definetely not{
+			clear all
+			->end
+		}
+@node1
+		*say
+		So you are in the drawing room right now and there are three ways in front of you in which way do you want to go? Is it right, left or the one which is in front of you?
+		*reprompt
+		Choose a way.
+		*then
+		hear left,take me to left direction,head to left direction,I want to go to left,I choose left,left direction,I think left is a better option{
+			clear all
+			->left
+		}
+		hear right,take me to right direction,head to right direction,I want to go to right,I choose right,right direction,I think right is a better option{
+			clear all
+			->right
+		}
+		hear the way which is infront of me,front one,front direction,I want to go in front direction,I think front direction is a better choice,i would like to go straight{
+			clear all
+			->front direction
+		}
+@left
+		*say
+		You have choosen the right direction but the hard part is yet to come there are two doors in front of you and you have to choose any of them,one is labelled as haunted and the other one as not at all haunted so which one do you like to choose? choose  the wise  one
+		*reprompt
+		Choose a door.
+		*then
+		hear haunted,I would like to go to haunted one,I am a risk taker I want to try haunted one,the door which is labelled as haunted one{
+			clear all
+			->haunted
+		}
+		hear not at all haunted,the door which is labelled as not at all haunted one{
+			clear all
+			->not at all haunted
+		}
+@right
+		*say
+		You have choosen the best direction out of all three there is a bike in front of you, you can use the bike and can escape from the haunted house
+		*then
+		->win
+@front direction
+		*say 
+		The direction which you have choosen is not the correct one so you may have to end the game here and better luck next time!
+		*then
+		->end
+@haunted
+		*say
+		The door which you have choosen is a haunted one and it is impossible to come out of this room so unfortunately your game ends and here better luck next time!		
+		*then
+		->end
+@not at all haunted
+		*say
+		You have choosen the right door there is a car in front of you, you can use the car and can escape from the haunted house
+		*then
+		->win
+@win
+		*say
+		You made it!! you have escaped from the haunted house and you won the game.
+@end
+		*say
+		game ended

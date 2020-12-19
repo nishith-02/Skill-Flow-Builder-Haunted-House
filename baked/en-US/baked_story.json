@@ -1,0 +1,716 @@
+{
+    "pluginName": "default",
+    "scenes": [
+        {
+            "contents": [
+                {
+                    "narration": "Hey! Are you bored? Want to explore something new?",
+                    "sceneDirections": [
+                        {
+                            "directionType": "go to",
+                            "parameters": {
+                                "target": "node",
+                                "targetSceneProperty": "narration"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "id": "start",
+            "customProperties": {
+                "sourceLocation": 0,
+                "sourceID": "story.abc"
+            }
+        },
+        {
+            "contents": [
+                {
+                    "narration": "Would you to like to continue?",
+                    "sceneDirections": [
+                        {
+                            "directionType": "reprompt",
+                            "parameters": {
+                                "message": "Hey are you there, would you like to continue?"
+                            }
+                        },
+                        {
+                            "directionType": "choice",
+                            "parameters": {
+                                "utterances": [
+                                    "yes",
+                                    "yeah",
+                                    "yah",
+                                    "yo",
+                                    "yep",
+                                    "hell yeah",
+                                    "ready",
+                                    "all set for it",
+                                    "ofcourse",
+                                    "yes ofcourse",
+                                    "sure",
+                                    "why not",
+                                    "absolutely",
+                                    "absolutely yes",
+                                    "definitely",
+                                    "cool",
+                                    "intrested",
+                                    "okay"
+                                ],
+                                "saveToHistory": "true",
+                                "directions": [
+                                    {
+                                        "directionType": "clear",
+                                        "parameters": {
+                                            "variableName": "all"
+                                        }
+                                    },
+                                    {
+                                        "directionType": "go to",
+                                        "parameters": {
+                                            "target": "begin",
+                                            "targetSceneProperty": "narration"
+                                        }
+                                    }
+                                ],
+                                "utteranceIDs": [
+                                    "AMAZON.YesIntent",
+                                    "flexaIntent"
+                                ]
+                            }
+                        },
+                        {
+                            "directionType": "choice",
+                            "parameters": {
+                                "utterances": [
+                                    "no",
+                                    "nope",
+                                    "nah",
+                                    "not intrested",
+                                    "boring",
+                                    "not at all",
+                                    "ofcourse not",
+                                    "absolutely not",
+                                    "hell no",
+                                    "never",
+                                    "absolutely not",
+                                    "definetely not",
+                                    "no way",
+                                    "not possible"
+                                ],
+                                "saveToHistory": "true",
+                                "directions": [
+                                    {
+                                        "directionType": "clear",
+                                        "parameters": {
+                                            "variableName": "all"
+                                        }
+                                    },
+                                    {
+                                        "directionType": "go to",
+                                        "parameters": {
+                                            "target": "end",
+                                            "targetSceneProperty": "narration"
+                                        }
+                                    }
+                                ],
+                                "utteranceIDs": [
+                                    "AMAZON.NoIntent",
+                                    "flexbIntent"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "id": "node",
+            "customProperties": {
+                "sourceLocation": 84,
+                "sourceID": "story.abc"
+            }
+        },
+        {
+            "contents": [
+                {
+                    "narration": "You somehow entered a haunted house and now need to escape from that haunted house so are you ready?",
+                    "sceneDirections": [
+                        {
+                            "directionType": "reprompt",
+                            "parameters": {
+                                "message": "Shall we begin?"
+                            }
+                        },
+                        {
+                            "directionType": "choice",
+                            "parameters": {
+                                "utterances": [
+                                    "yes",
+                                    "yeah",
+                                    "yah",
+                                    "yo",
+                                    "hell yeah",
+                                    "yeah am ready",
+                                    "yeah let's begin",
+                                    "start",
+                                    "am always ready",
+                                    "really excited",
+                                    "ofcourse",
+                                    "ofcourse yes",
+                                    "absolutely",
+                                    "absolutely yes",
+                                    "all set for it",
+                                    "definitely",
+                                    "cool",
+                                    "sure",
+                                    "okay",
+                                    "I am in"
+                                ],
+                                "saveToHistory": "true",
+                                "directions": [
+                                    {
+                                        "directionType": "clear",
+                                        "parameters": {
+                                            "variableName": "all"
+                                        }
+                                    },
+                                    {
+                                        "directionType": "go to",
+                                        "parameters": {
+                                            "target": "node1",
+                                            "targetSceneProperty": "narration"
+                                        }
+                                    }
+                                ],
+                                "utteranceIDs": [
+                                    "AMAZON.YesIntent",
+                                    "flexaIntent"
+                                ]
+                            }
+                        },
+                        {
+                            "directionType": "choice",
+                            "parameters": {
+                                "utterances": [
+                                    "no",
+                                    "not intrested",
+                                    "nah",
+                                    "boring",
+                                    "not at all",
+                                    "never",
+                                    "hell no",
+                                    "ofcourse not",
+                                    "absolutely not",
+                                    "no way",
+                                    "definetely not"
+                                ],
+                                "saveToHistory": "true",
+                                "directions": [
+                                    {
+                                        "directionType": "clear",
+                                        "parameters": {
+                                            "variableName": "all"
+                                        }
+                                    },
+                                    {
+                                        "directionType": "go to",
+                                        "parameters": {
+                                            "target": "end",
+                                            "targetSceneProperty": "narration"
+                                        }
+                                    }
+                                ],
+                                "utteranceIDs": [
+                                    "AMAZON.NoIntent",
+                                    "flexbIntent"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "id": "begin",
+            "customProperties": {
+                "sourceLocation": 548,
+                "sourceID": "story.abc"
+            }
+        },
+        {
+            "contents": [
+                {
+                    "narration": "So you are in the drawing room right now and there are three ways in front of you in which way do you want to go? Is it right, left or the one which is in front of you?",
+                    "sceneDirections": [
+                        {
+                            "directionType": "reprompt",
+                            "parameters": {
+                                "message": "Choose a way."
+                            }
+                        },
+                        {
+                            "directionType": "choice",
+                            "parameters": {
+                                "utterances": [
+                                    "left",
+                                    "take me to left direction",
+                                    "head to left direction",
+                                    "I want to go to left",
+                                    "I choose left",
+                                    "left direction",
+                                    "I think left is a better option"
+                                ],
+                                "saveToHistory": "true",
+                                "directions": [
+                                    {
+                                        "directionType": "clear",
+                                        "parameters": {
+                                            "variableName": "all"
+                                        }
+                                    },
+                                    {
+                                        "directionType": "go to",
+                                        "parameters": {
+                                            "target": "left",
+                                            "targetSceneProperty": "narration"
+                                        }
+                                    }
+                                ],
+                                "utteranceIDs": [
+                                    "flexcIntent"
+                                ]
+                            }
+                        },
+                        {
+                            "directionType": "choice",
+                            "parameters": {
+                                "utterances": [
+                                    "right",
+                                    "take me to right direction",
+                                    "head to right direction",
+                                    "I want to go to right",
+                                    "I choose right",
+                                    "right direction",
+                                    "I think right is a better option"
+                                ],
+                                "saveToHistory": "true",
+                                "directions": [
+                                    {
+                                        "directionType": "clear",
+                                        "parameters": {
+                                            "variableName": "all"
+                                        }
+                                    },
+                                    {
+                                        "directionType": "go to",
+                                        "parameters": {
+                                            "target": "right",
+                                            "targetSceneProperty": "narration"
+                                        }
+                                    }
+                                ],
+                                "utteranceIDs": [
+                                    "AMAZON.YesIntent",
+                                    "flexdIntent"
+                                ]
+                            }
+                        },
+                        {
+                            "directionType": "choice",
+                            "parameters": {
+                                "utterances": [
+                                    "the way which is infront of me",
+                                    "front one",
+                                    "front direction",
+                                    "I want to go in front direction",
+                                    "I think front direction is a better choice",
+                                    "i would like to go straight"
+                                ],
+                                "saveToHistory": "true",
+                                "directions": [
+                                    {
+                                        "directionType": "clear",
+                                        "parameters": {
+                                            "variableName": "all"
+                                        }
+                                    },
+                                    {
+                                        "directionType": "go to",
+                                        "parameters": {
+                                            "target": "front direction",
+                                            "targetSceneProperty": "narration"
+                                        }
+                                    }
+                                ],
+                                "utteranceIDs": [
+                                    "flexeIntent"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "id": "node1",
+            "customProperties": {
+                "sourceLocation": 1067,
+                "sourceID": "story.abc"
+            }
+        },
+        {
+            "contents": [
+                {
+                    "narration": "You have choosen the right direction but the hard part is yet to come there are two doors in front of you and you have to choose any of them,one is labelled as haunted and the other one as not at all haunted so which one do you like to choose? choose  the wise  one",
+                    "sceneDirections": [
+                        {
+                            "directionType": "reprompt",
+                            "parameters": {
+                                "message": "Choose a door."
+                            }
+                        },
+                        {
+                            "directionType": "choice",
+                            "parameters": {
+                                "utterances": [
+                                    "haunted",
+                                    "I would like to go to haunted one",
+                                    "I am a risk taker I want to try haunted one",
+                                    "the door which is labelled as haunted one"
+                                ],
+                                "saveToHistory": "true",
+                                "directions": [
+                                    {
+                                        "directionType": "clear",
+                                        "parameters": {
+                                            "variableName": "all"
+                                        }
+                                    },
+                                    {
+                                        "directionType": "go to",
+                                        "parameters": {
+                                            "target": "haunted",
+                                            "targetSceneProperty": "narration"
+                                        }
+                                    }
+                                ],
+                                "utteranceIDs": [
+                                    "flexfIntent"
+                                ]
+                            }
+                        },
+                        {
+                            "directionType": "choice",
+                            "parameters": {
+                                "utterances": [
+                                    "not at all haunted",
+                                    "the door which is labelled as not at all haunted one"
+                                ],
+                                "saveToHistory": "true",
+                                "directions": [
+                                    {
+                                        "directionType": "clear",
+                                        "parameters": {
+                                            "variableName": "all"
+                                        }
+                                    },
+                                    {
+                                        "directionType": "go to",
+                                        "parameters": {
+                                            "target": "not at all haunted",
+                                            "targetSceneProperty": "narration"
+                                        }
+                                    }
+                                ],
+                                "utteranceIDs": [
+                                    "flexgIntent"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "id": "left",
+            "customProperties": {
+                "sourceLocation": 1844,
+                "sourceID": "story.abc"
+            }
+        },
+        {
+            "contents": [
+                {
+                    "narration": "You have choosen the best direction out of all three there is a bike in front of you, you can use the bike and can escape from the haunted house",
+                    "sceneDirections": [
+                        {
+                            "directionType": "go to",
+                            "parameters": {
+                                "target": "win",
+                                "targetSceneProperty": "narration"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "id": "right",
+            "customProperties": {
+                "sourceLocation": 2449,
+                "sourceID": "story.abc"
+            }
+        },
+        {
+            "contents": [
+                {
+                    "narration": "The direction which you have choosen is not the correct one so you may have to end the game here and better luck next time!",
+                    "sceneDirections": [
+                        {
+                            "directionType": "go to",
+                            "parameters": {
+                                "target": "end",
+                                "targetSceneProperty": "narration"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "id": "front direction",
+            "customProperties": {
+                "sourceLocation": 2626,
+                "sourceID": "story.abc"
+            }
+        },
+        {
+            "contents": [
+                {
+                    "narration": "The door which you have choosen is a haunted one and it is impossible to come out of this room so unfortunately your game ends and here better luck next time!",
+                    "sceneDirections": [
+                        {
+                            "directionType": "go to",
+                            "parameters": {
+                                "target": "end",
+                                "targetSceneProperty": "narration"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "id": "haunted",
+            "customProperties": {
+                "sourceLocation": 2793,
+                "sourceID": "story.abc"
+            }
+        },
+        {
+            "contents": [
+                {
+                    "narration": "You have choosen the right door there is a car in front of you, you can use the car and can escape from the haunted house",
+                    "sceneDirections": [
+                        {
+                            "directionType": "go to",
+                            "parameters": {
+                                "target": "win",
+                                "targetSceneProperty": "narration"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "id": "not at all haunted",
+            "customProperties": {
+                "sourceLocation": 2988,
+                "sourceID": "story.abc"
+            }
+        },
+        {
+            "contents": [
+                {
+                    "narration": "You made it!! you have escaped from the haunted house and you won the game.",
+                    "sceneDirections": [
+                        {
+                            "directionType": "ending",
+                            "parameters": {}
+                        }
+                    ]
+                }
+            ],
+            "id": "win",
+            "customProperties": {
+                "sourceLocation": 3155,
+                "sourceID": "story.abc"
+            }
+        },
+        {
+            "contents": [
+                {
+                    "narration": "game ended",
+                    "sceneDirections": [
+                        {
+                            "directionType": "ending",
+                            "parameters": {}
+                        }
+                    ]
+                }
+            ],
+            "id": "end",
+            "customProperties": {
+                "sourceLocation": 3245,
+                "sourceID": "story.abc"
+            }
+        }
+    ],
+    "storyID": "story",
+    "storyTitle": "story",
+    "alexaVoiceModel": {
+        "languageModel": {
+            "intents": [
+                {
+                    "name": "flexaIntent",
+                    "samples": [
+                        "yah",
+                        "yo",
+                        "hell yeah",
+                        "ready",
+                        "all set for it",
+                        "ofcourse",
+                        "yes ofcourse",
+                        "why not",
+                        "cool",
+                        "intrested",
+                        "yeah am ready",
+                        "yeah let's begin",
+                        "start",
+                        "am always ready",
+                        "really excited",
+                        "ofcourse yes",
+                        "i am in"
+                    ]
+                },
+                {
+                    "name": "flexbIntent",
+                    "samples": [
+                        "nah",
+                        "not intrested",
+                        "boring",
+                        "ofcourse not",
+                        "hell no",
+                        "definetely not",
+                        "not possible"
+                    ]
+                },
+                {
+                    "name": "flexcIntent",
+                    "samples": [
+                        "left",
+                        "take me to left direction",
+                        "head to left direction",
+                        "i want to go to left",
+                        "i choose left",
+                        "left direction",
+                        "i think left is a better option"
+                    ]
+                },
+                {
+                    "name": "flexdIntent",
+                    "samples": [
+                        "take me to right direction",
+                        "head to right direction",
+                        "i want to go to right",
+                        "i choose right",
+                        "right direction",
+                        "i think right is a better option"
+                    ]
+                },
+                {
+                    "name": "flexeIntent",
+                    "samples": [
+                        "the way which is infront of me",
+                        "front one",
+                        "front direction",
+                        "i want to go in front direction",
+                        "i think front direction is a better choice",
+                        "i would like to go straight"
+                    ]
+                },
+                {
+                    "name": "flexfIntent",
+                    "samples": [
+                        "haunted",
+                        "i would like to go to haunted one",
+                        "i am a risk taker i want to try haunted one",
+                        "the door which is labelled as haunted one"
+                    ]
+                },
+                {
+                    "name": "flexgIntent",
+                    "samples": [
+                        "not at all haunted",
+                        "the door which is labelled as not at all haunted one"
+                    ]
+                },
+                {
+                    "name": "AMAZON.CancelIntent"
+                },
+                {
+                    "name": "AMAZON.HelpIntent"
+                },
+                {
+                    "name": "AMAZON.LoopOffIntent"
+                },
+                {
+                    "name": "AMAZON.LoopOnIntent"
+                },
+                {
+                    "name": "AMAZON.NextIntent"
+                },
+                {
+                    "name": "AMAZON.NoIntent"
+                },
+                {
+                    "name": "AMAZON.PauseIntent"
+                },
+                {
+                    "name": "AMAZON.PreviousIntent"
+                },
+                {
+                    "name": "AMAZON.RepeatIntent"
+                },
+                {
+                    "name": "AMAZON.ResumeIntent"
+                },
+                {
+                    "name": "AMAZON.ShuffleOffIntent"
+                },
+                {
+                    "name": "AMAZON.ShuffleOnIntent"
+                },
+                {
+                    "name": "AMAZON.StartOverIntent"
+                },
+                {
+                    "name": "AMAZON.StopIntent"
+                },
+                {
+                    "name": "AMAZON.YesIntent"
+                },
+                {
+                    "name": "AMAZON.ScrollUpIntent"
+                },
+                {
+                    "name": "AMAZON.ScrollLeftIntent"
+                },
+                {
+                    "name": "AMAZON.ScrollDownIntent"
+                },
+                {
+                    "name": "AMAZON.ScrollRightIntent"
+                },
+                {
+                    "name": "AMAZON.PageUpIntent"
+                },
+                {
+                    "name": "AMAZON.PageDownIntent"
+                },
+                {
+                    "name": "AMAZON.MoreIntent"
+                },
+                {
+                    "name": "AMAZON.FallbackIntent"
+                }
+            ],
+            "invocationName": "story"
+        }
+    }
+}

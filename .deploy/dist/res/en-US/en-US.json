@@ -1,0 +1,162 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "intents": [
+                {
+                    "name": "flexaIntent",
+                    "samples": [
+                        "yah",
+                        "yo",
+                        "hell yeah",
+                        "ready",
+                        "all set for it",
+                        "ofcourse",
+                        "yes ofcourse",
+                        "why not",
+                        "cool",
+                        "intrested",
+                        "yeah am ready",
+                        "yeah let's begin",
+                        "start",
+                        "am always ready",
+                        "really excited",
+                        "ofcourse yes",
+                        "i am in"
+                    ]
+                },
+                {
+                    "name": "flexbIntent",
+                    "samples": [
+                        "nah",
+                        "not intrested",
+                        "boring",
+                        "ofcourse not",
+                        "hell no",
+                        "definetely not",
+                        "not possible"
+                    ]
+                },
+                {
+                    "name": "flexcIntent",
+                    "samples": [
+                        "left",
+                        "take me to left direction",
+                        "head to left direction",
+                        "i want to go to left",
+                        "i choose left",
+                        "left direction",
+                        "i think left is a better option"
+                    ]
+                },
+                {
+                    "name": "flexdIntent",
+                    "samples": [
+                        "take me to right direction",
+                        "head to right direction",
+                        "i want to go to right",
+                        "i choose right",
+                        "right direction",
+                        "i think right is a better option"
+                    ]
+                },
+                {
+                    "name": "flexeIntent",
+                    "samples": [
+                        "the way which is infront of me",
+                        "front one",
+                        "front direction",
+                        "i want to go in front direction",
+                        "i think front direction is a better choice",
+                        "i would like to go straight"
+                    ]
+                },
+                {
+                    "name": "flexfIntent",
+                    "samples": [
+                        "haunted",
+                        "i would like to go to haunted one",
+                        "i am a risk taker i want to try haunted one",
+                        "the door which is labelled as haunted one"
+                    ]
+                },
+                {
+                    "name": "flexgIntent",
+                    "samples": [
+                        "not at all haunted",
+                        "the door which is labelled as not at all haunted one"
+                    ]
+                },
+                {
+                    "name": "AMAZON.CancelIntent"
+                },
+                {
+                    "name": "AMAZON.HelpIntent"
+                },
+                {
+                    "name": "AMAZON.LoopOffIntent"
+                },
+                {
+                    "name": "AMAZON.LoopOnIntent"
+                },
+                {
+                    "name": "AMAZON.NextIntent"
+                },
+                {
+                    "name": "AMAZON.NoIntent"
+                },
+                {
+                    "name": "AMAZON.PauseIntent"
+                },
+                {
+                    "name": "AMAZON.PreviousIntent"
+                },
+                {
+                    "name": "AMAZON.RepeatIntent"
+                },
+                {
+                    "name": "AMAZON.ResumeIntent"
+                },
+                {
+                    "name": "AMAZON.ShuffleOffIntent"
+                },
+                {
+                    "name": "AMAZON.ShuffleOnIntent"
+                },
+                {
+                    "name": "AMAZON.StartOverIntent"
+                },
+                {
+                    "name": "AMAZON.StopIntent"
+                },
+                {
+                    "name": "AMAZON.YesIntent"
+                },
+                {
+                    "name": "AMAZON.ScrollUpIntent"
+                },
+                {
+                    "name": "AMAZON.ScrollLeftIntent"
+                },
+                {
+                    "name": "AMAZON.ScrollDownIntent"
+                },
+                {
+                    "name": "AMAZON.ScrollRightIntent"
+                },
+                {
+                    "name": "AMAZON.PageUpIntent"
+                },
+                {
+                    "name": "AMAZON.PageDownIntent"
+                },
+                {
+                    "name": "AMAZON.MoreIntent"
+                },
+                {
+                    "name": "AMAZON.FallbackIntent"
+                }
+            ],
+            "invocationName": "story"
+        }
+    }
+}
