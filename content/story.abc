@@ -1,91 +1,179 @@
 @start
 		*say
-		Hey! Are you bored? Want to explore something new?
+		    Hey! Are you bored? Want to explore something new?
 		*then
-		->node
-@node
+		    ->continue
+@continue
 		*say
-		Would you to like to continue?
+		    Would you to like to continue?
 		*reprompt
-		Hey are you there, would you like to continue?
+		    Hey are you there, would you like to continue?
 		*then
-		hear yes,yeah,yah,yo,yep,hell yeah,ready,all set for it,ofcourse,yes ofcourse,sure,why not,absolutely,absolutely yes,definitely,cool,intrested,okay{
-			clear all
-			->begin
-		}
-		hear no,nope,nah,not intrested,boring,not at all,ofcourse not,absolutely not,hell no,never,absolutely not,definetely not,no way,not possible{
-			clear all
-			->end
-		}
+		    hear yes,yeah,yah,yo,yep,hell yeah,ready,all set for it,ofcourse,yes ofcourse,sure,why not,absolutely,absolutely yes,definitely,cool,intrested,okay{
+			    clear all
+			    ->begin
+		    }
+		    hear no,nope,nah,not intrested,boring,not at all,ofcourse not,absolutely not,hell no,never,absolutely not,definetely not,no way,not possible{
+			    clear all
+			    ->end
+		    }
 @begin
+        *show
+            template:'default'
+            background:'https://s3.ap-south-1.amazonaws.com/com.alexa.hauntedhouse/haunted+house.jpg'
+            title: haunted house
 		*say
-		You somehow entered a haunted house and now need to escape from that haunted house so are you ready?
+		    The winter vacations have started and you have planned to go for a trip along with your friends. You have arrived at the place along with your friends, the first day went awesome, you visited the beach which was there in that town. On the same day, night you were thirsty so you went to a store to buy a water bottle then an old man dragged you and took you to an old house which was few miles away from  the store, he took you to the house and went away from there. It is said that the old house is a haunted place and it is also said that there may be some things in the house which may not be real even if you see them. So, now you need to escape from that haunted house. Do you want to start the game?
 		*reprompt
-		Shall we begin?
+		    Shall we begin?
 		*then
-		hear yes,yeah,yah,yo,hell yeah,yeah am ready,yeah let's begin,start,am always ready,really excited,ofcourse,ofcourse yes,absolutely,absolutely yes,all set for it,definitely,cool,sure,okay,I am in{
-			clear all
-			->node1
-		}
-		hear no,not intrested,nah,boring,not at all,never,hell no,ofcourse not,absolutely not,no way,definetely not{
-			clear all
-			->end
-		}
-@node1
+		    hear yes,yeah,yah,yo,hell yeah,yeah am ready,yeah let's begin,start,am always ready,really excited,ofcourse,ofcourse yes,absolutely,absolutely yes,all set for it,definitely,cool,sure,okay,I am in{
+			    clear all
+			    ->ways
+		    }
+		    hear no,not intrested,nah,boring,not at all,never,hell no,ofcourse not,absolutely not,no way,definetely not{
+			    clear all
+			    ->end
+		    }
+@ways
 		*say
-		So you are in the drawing room right now and there are three ways in front of you in which way do you want to go? Is it right, left or the one which is in front of you?
-		*reprompt
-		Choose a way.
+		    So you are in a place where there are three ways in front of you in which way do you want to go? Is it right, left or the one which is in front of you?
+        *reprompt
+            Choose a way
 		*then
-		hear left,take me to left direction,head to left direction,I want to go to left,I choose left,left direction,I think left is a better option{
-			clear all
-			->left
+		    hear left,left one,take me to left direction,head to left direction,I want to go to left,I choose left,left direction,I think left is a better option{
+			    set playerhealth as 20
+			    ->left
 		}
-		hear right,take me to right direction,head to right direction,I want to go to right,I choose right,right direction,I think right is a better option{
-			clear all
-			->right
-		}
-		hear the way which is infront of me,front one,front direction,I want to go in front direction,I think front direction is a better choice,i would like to go straight{
-			clear all
-			->front direction
-		}
+            hear right,right one,take me to right direction,head to right direction,I want to go to right,I choose right,right direction,I think right is a better option{
+                set playerhealth as 15
+                ->right
+        }
+            hear front,front direction,the one which is in front of me,straight,the way which is infront of me,front one,i want to go in front direction,I think front direction is a better choice,i would like to go straight{
+                ->front
+            }
+@front
+        *say
+            You have chosen the front direction and after you have travelled some distance, you found out that there are two ways in front of you. You could see that in the first way there was fire burning up and the second way looks clear. Make a wise decision and choose a way
+        *reprompt
+            Choose a way wisely.
+        *then
+            hear first way,way one,i would like to go the first way,seems like first way is better,head to first  way,i want to go the first way,first one,the first one{
+                ->firstway
+            }
+            hear second way,way two,i would like to go the second way,seems like second way is better,head to second  way,i want to go the second way,second one,the second one{
+                ->secondway
+            }
 @left
 		*say
-		You have choosen the right direction but the hard part is yet to come there are two doors in front of you and you have to choose any of them,one is labelled as haunted and the other one as not at all haunted so which one do you like to choose? choose  the wise  one
-		*reprompt
-		Choose a door.
+            You have chosen the left direction and after you have travelled some distance you realize that there is a zombie in front of you but there seems a way to defeat that zombie
 		*then
-		hear haunted,I would like to go to haunted one,I am a risk taker I want to try haunted one,the door which is labelled as haunted one{
-			clear all
-			->haunted
-		}
-		hear not at all haunted,the door which is labelled as not at all haunted one{
-			clear all
-			->not at all haunted
-		}
+            set enemy as 'zombie'
+            set enemyhealth as 10
+            set enemydamage as 2
+            ->weapon
 @right
-		*say
-		You have choosen the best direction out of all three there is a bike in front of you, you can use the bike and can escape from the haunted house
-		*then
-		->win
-@front direction
-		*say 
-		The direction which you have choosen is not the correct one so you may have to end the game here and better luck next time!
-		*then
-		->end
-@haunted
-		*say
-		The door which you have choosen is a haunted one and it is impossible to come out of this room so unfortunately your game ends and here better luck next time!		
-		*then
-		->end
-@not at all haunted
-		*say
-		You have choosen the right door there is a car in front of you, you can use the car and can escape from the haunted house
-		*then
-		->win
+        *say
+            You have chosen the right direction and after you travelled some distance you realize that there is a vampire in front of you but there seems a way to defeat that vampire
+        *then
+            set enemy as 'vampire'
+            set enemyhealth as 12
+            set enemydamage as 2
+            ->weapon
+@weapon
+        *say
+            There are two weapons beside you a gun and a knife choose a weapon
+        *reprompt
+            Choose a weapon
+        *then
+            hear knife,i will choose knife, i think knife is better option,i will go with knife{
+                set weapon as 'knife'
+                set weapondamage as 2
+                ->attack
+        }
+        hear gun,i will choose gun,i think gun is better option,i will go with gun{
+            set weapon as 'gun'
+            set weapondamage as 3
+            ->attack
+        }
+@attack
+        *say
+            You have took the {weapon} and tried to attack the {enemy}
+        *then
+            <->fight
+            if attack {
+                decrease enemyhealth by weapondamage
+                ->update
+            }
+            if !attack {
+                decrease playerhealth by enemydamage
+                ->update
+            }
+@fight
+        *then
+            roll 1d2
+            flag attack
+            if rollResult != 1 {
+                unflag attack
+            }
+            >>RETURN
+@update
+        *say
+            Your health is {playerhealth} and the health of {enemy} is {enemyhealth}.
+        *then
+            if playerhealth > 0 and enemyhealth > 0 {
+            ->weapon
+            }
+            if playerhealth <= 0 {
+            ->losefight
+            }
+            if enemyhealth <= 0 {
+            -> winfight
+            }
+@firstway
+        *say
+             Congratulations! You have chosen the right one, you have come out of the haunted house and your friends are waiting for you outside the house.
+        *then
+            ->again
+@secondway
+        *say
+            Alas! the sayings of the people were true after all, the way which you have chosen is the wrong one, there is no way you could escape from this as their is  cliff in front of you and the door has been shut down from where you have come.
+        *then
+            ->loose
+@losefight
+        *say
+            You have lost the battle against the {enemy}
+        *then
+            ->loose
+@winfight
+        *say
+            You have won the battle against the {enemy}
+        *then
+            ->win
 @win
 		*say
-		You made it!! you have escaped from the haunted house and you won the game.
+		    Congratulations! you have come out of the haunted house and your friends are waiting for you outside the house.
+        *then
+            ->again
+@loose
+        *say
+            You were not able to escape from the haunted house. You lost
+        *then
+            ->again
+@again
+        *say
+             Do you want to play again?
+        *reprompt
+            Say yes if you play again and no if don't want to play again
+        *then
+            hear yes,yeah,yah,yo,yep,hell yeah,ready,all set for it,ofcourse,yes ofcourse,sure,why not,absolutely,absolutely yes,definitely,cool,intrested,okay{
+                ->begin
+            }
+            hear no,nope,nah,not intrested,boring,not at all,ofcourse not,absolutely not,hell no,never,absolutely not,definetely not,no way,not possible{
+                ->end
+            }
 @end
 		*say
-		game ended
+		    the game has ended
+        *then
+            >>END
